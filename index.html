@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>TheONE – TradeOne Trading Journal &amp; LifeOne App | dmbTrades</title>
+<meta name="description" content="TheONE von dmbTrades: TradeOne, das Trading Journal als Web-App, und LifeOne, das Alltags-Dashboard mit Terminen, Geburtstagen, Einkaufsliste und Gym-Plan. Einmal zahlen, kein Abo.">
+<meta name="keywords" content="TheONE, TradeOne, LifeOne, dmbTrades, Trading Journal, Trading Journal App, Life Dashboard App">
+<meta name="robots" content="index,follow">
+<meta property="og:type" content="website"><meta property="og:title" content="TheONE – TradeOne &amp; LifeOne by dmbTrades"><meta property="og:description" content="Trading Journal und Life-Dashboard als Web-Apps. Einmal zahlen, kein Abo."><meta property="og:locale" content="de_DE"><meta property="og:site_name" content="TheONE">
+<meta name="twitter:card" content="summary">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"TheONE","founder":{"@type":"Person","name":"dmbTrades"},"description":"TradeOne Trading Journal und LifeOne Life-Dashboard als Web-Apps."}</script>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0B0B0C;--card:#161617;--ink:#F2F2F2;--mute:#9A9A9F;--line:#2A2A2C;--blue:#E4E4E6;--onb:#0B0B0C;--mint:#2BC48A;--red:#E5484D;--shadow:0 20px 50px -20px #000;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+:root[data-theme="light"]{--bg:#EBEBEC;--card:#fff;--ink:#111;--mute:#6B6B70;--line:#D9D9DC;--blue:#1A1A1C;--onb:#fff;--shadow:0 20px 50px -20px rgba(0,0,0,.3)}
+*{box-sizing:border-box;margin:0}html{scroll-behavior:smooth;scroll-padding-top:env(safe-area-inset-top,0px)}
+body{background:var(--bg);color:var(--ink);font:400 16px/1.55 'DM Sans',system-ui,sans-serif;overflow-x:hidden}
+h1,h2,h3,.logo{font-family:'Bricolage Grotesque',system-ui,sans-serif;letter-spacing:-.03em;line-height:1.05}
+button{font:inherit;color:inherit;cursor:pointer;border:0;background:none}
+:focus-visible{outline:3px solid var(--blue);outline-offset:2px}
+.wrap{max-width:1120px;margin:auto;padding:0 20px}
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;backdrop-filter:blur(14px);background:color-mix(in srgb,var(--bg) 80%,transparent);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;gap:20px;height:64px}
+.logo{font-weight:800;font-size:24px;display:flex;align-items:center;gap:8px}
+.logo i{width:22px;height:22px;border-radius:7px;background:var(--blue);display:block;position:relative}
+.logo i:after{content:"";position:absolute;inset:6px;border-radius:50%;background:var(--bg)}
+nav a{color:var(--mute);text-decoration:none;font-weight:500;font-size:15px;transition:color .2s}nav a:hover{color:var(--ink)}
+.sp{flex:1}.links{display:flex;gap:22px}@media(max-width:640px){.links{display:none}}
+.ib{width:42px;height:42px;border-radius:12px;display:grid;place-items:center;position:relative;transition:background .2s,transform .2s}.ib:hover{background:var(--line)}.ib:active{transform:scale(.92)}
+.badge{position:absolute;top:2px;right:2px;min-width:18px;height:18px;border-radius:9px;background:var(--blue);color:var(--onb);font-size:11px;font-weight:700;display:grid;place-items:center;transform:scale(0);transition:transform .35s cubic-bezier(.3,1.8,.5,1)}.badge.on{transform:scale(1)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:14px 24px;border-radius:14px;background:var(--blue);color:var(--onb);font-weight:700;transition:transform .2s,box-shadow .2s;box-shadow:0 10px 24px -10px var(--blue)}.btn:hover{transform:translateY(-2px)}.btn:active{transform:scale(.97)}
+.btn.g{background:var(--card);color:var(--ink);box-shadow:inset 0 0 0 1.5px var(--line)}
+.hero{display:grid;grid-template-columns:1.05fr 1fr;gap:48px;align-items:center;padding:72px 0 56px}
+@media(max-width:860px){.hero{grid-template-columns:1fr;padding-top:40px}}
+.hero h1{font-size:clamp(40px,6.4vw,76px);font-weight:800}
+.hero p{color:var(--mute);font-size:19px;max-width:30em;margin:22px 0 30px}
+.row{display:flex;gap:12px;flex-wrap:wrap}.trust{display:flex;gap:18px;margin-top:28px;color:var(--mute);font-size:14px;flex-wrap:wrap}.trust b{color:var(--ink)}
+.mock{background:var(--card);border-radius:24px;box-shadow:var(--shadow);padding:22px;border:1px solid var(--line);transform:rotate(1.5deg);animation:pop .9s cubic-bezier(.2,1,.3,1) both}
+@keyframes pop{from{opacity:0;transform:translateY(40px) rotate(5deg) scale(.94)}}
+.mock small{color:var(--mute)}.mock .big{font:800 36px 'Bricolage Grotesque';color:var(--mint)}
+.mock svg{width:100%;height:auto;margin:10px 0}
+.eq{stroke-dasharray:700;stroke-dashoffset:700;animation:draw 2.2s .5s cubic-bezier(.5,0,.2,1) forwards}.eqf{opacity:0;animation:fi 1s 2s forwards}
+@keyframes draw{to{stroke-dashoffset:0}}@keyframes fi{to{opacity:1}}
+.tr{display:flex;justify-content:space-between;padding:9px 0;border-top:1px solid var(--line);font-size:14px;opacity:0;animation:fi .5s forwards}.tr:nth-of-type(1){animation-delay:1.2s}.tr:nth-of-type(2){animation-delay:1.5s}.tr:nth-of-type(3){animation-delay:1.8s}
+.w{color:var(--mint);font-weight:700}.l{color:var(--red);font-weight:700}
+section{padding:56px 0}h2{font-size:clamp(30px,4.4vw,48px);font-weight:800;margin-bottom:10px}.sub{color:var(--mute);max-width:36em;margin-bottom:34px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:20px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:22px;overflow:hidden;display:flex;flex-direction:column;transition:transform .35s cubic-bezier(.2,1,.3,1),box-shadow .35s;text-align:left}
+.card:hover{transform:translateY(-6px);box-shadow:var(--shadow)}
+.art{height:170px;display:grid;place-items:center;position:relative;overflow:hidden}.art svg{width:78%;transition:transform .5s cubic-bezier(.2,1,.3,1)}.card:hover .art svg{transform:scale(1.07) rotate(-1.5deg)}
+.tag{position:absolute;top:12px;left:12px;background:var(--card);color:var(--ink);font-size:12px;font-weight:700;padding:4px 10px;border-radius:99px}
+.cb{padding:18px;display:flex;flex-direction:column;gap:6px;flex:1}.cb h3{font-size:22px}.cb p{color:var(--mute);font-size:14px;flex:1}
+.pr{display:flex;align-items:center;justify-content:space-between;margin-top:12px}.pr b{font:800 24px 'Bricolage Grotesque'}.pr s{color:var(--mute);font-size:14px;margin-right:6px}
+.add{padding:10px 16px;border-radius:12px;background:var(--ink);color:var(--bg);font-weight:700;font-size:14px;transition:transform .2s,background .3s}.add:active{transform:scale(.93)}.add.ok{background:var(--mint);color:#fff}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px}
+.st{padding:24px;border-radius:20px;background:var(--card);border:1px solid var(--line)}.st b{font:700 20px 'Bricolage Grotesque';display:block;margin-bottom:6px}.st p{color:var(--mute);font-size:15px}
+.rev{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px}.rv{padding:24px;border-radius:20px;background:var(--card);border:1px solid var(--line)}.rv .s{color:#F5A524;letter-spacing:2px}.rv p{margin:8px 0 14px}.rv small{color:var(--mute)}
+details{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px 20px;margin-bottom:10px}summary{font-weight:700;cursor:pointer}details p{color:var(--mute);margin-top:10px}
+footer{border-top:1px solid var(--line);padding:36px 0;color:var(--mute);font-size:14px}footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.ov{position:fixed;inset:0;background:rgba(10,12,30,.5);backdrop-filter:blur(4px);opacity:0;pointer-events:none;transition:opacity .3s;z-index:40}.ov.on{opacity:1;pointer-events:auto}
+.dr{position:fixed;top:0;right:0;bottom:0;width:min(440px,100%);background:var(--bg);z-index:50;transform:translateX(105%);transition:transform .5s cubic-bezier(.2,1,.3,1);display:flex;flex-direction:column;padding:20px;padding-top:calc(20px + env(safe-area-inset-top,0px));padding-bottom:calc(20px + env(safe-area-inset-bottom,0px))}.dr.on{transform:none}
+.dr h3{font-size:28px}.hd{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px}
+.items{flex:1;overflow:auto;display:flex;flex-direction:column;gap:10px}
+.it{display:flex;gap:12px;align-items:center;background:var(--card);padding:10px;border-radius:16px;border:1px solid var(--line);animation:pop2 .4s cubic-bezier(.2,1,.3,1)}@keyframes pop2{from{opacity:0;transform:translateX(30px)}}
+.it .th{width:60px;height:60px;border-radius:12px;display:grid;place-items:center;flex:none}.it .th svg{width:44px}.it div:nth-child(2){flex:1}.it small{color:var(--mute)}
+.empty{text-align:center;color:var(--mute);padding:50px 10px}
+.sum{border-top:1px solid var(--line);padding-top:14px;display:grid;gap:8px}.sum div{display:flex;justify-content:space-between}.sum .t{font:800 24px 'Bricolage Grotesque'}
+.cp{display:flex;gap:8px}.cp input,.f input{flex:1;padding:12px 14px;border-radius:12px;border:1.5px solid var(--line);background:var(--card);color:var(--ink);font:inherit;width:100%}
+.md{position:fixed;left:50%;top:50%;width:min(480px,92vw);max-height:88vh;overflow:auto;background:var(--bg);border-radius:26px;z-index:50;padding:26px;transform:translate(-50%,-46%) scale(.94);opacity:0;pointer-events:none;transition:.4s cubic-bezier(.2,1,.3,1)}.md.on{opacity:1;transform:translate(-50%,-50%);pointer-events:auto}
+.md h3{font-size:30px;margin-bottom:6px}.f{display:grid;gap:10px;margin:16px 0}.pm{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}.pm label{border:1.5px solid var(--line);border-radius:12px;padding:12px 4px;text-align:center;font-size:14px;font-weight:500;cursor:pointer;background:var(--card);transition:.2s}.pm input{display:none}.pm label:has(input:checked){border-color:var(--blue);box-shadow:0 0 0 3px color-mix(in srgb,var(--blue) 25%,transparent)}
+.ft{list-style:none;padding:0;margin:14px 0;display:grid;gap:8px}.ft li{display:flex;gap:10px}.ft li:before{content:"✓";color:var(--mint);font-weight:800}
+.ck{width:84px;height:84px;margin:6px auto 16px;display:block}.ck circle{stroke-dasharray:260;stroke-dashoffset:260;animation:draw .7s forwards}.ck path{stroke-dasharray:60;stroke-dashoffset:60;animation:draw .5s .6s forwards}
+.sp2{width:18px;height:18px;border:3px solid color-mix(in srgb,currentColor 25%,transparent);border-top-color:currentColor;border-radius:50%;animation:spin .7s linear infinite}@keyframes spin{to{transform:rotate(1turn)}}
+.toast{position:fixed;left:50%;bottom:calc(24px + env(safe-area-inset-bottom,0px));transform:translate(-50%,120px);background:var(--ink);color:var(--bg);padding:12px 20px;border-radius:14px;font-weight:500;z-index:60;transition:transform .5s cubic-bezier(.2,1.4,.4,1)}.toast.on{transform:translate(-50%,0)}
+@media(prefers-reduced-motion:reduce){*{animation-duration:.01s!important;animation-delay:0s!important;transition-duration:.01s!important}}
+
+#pg{position:fixed;top:0;left:0;height:3px;width:100%;background:linear-gradient(90deg,var(--blue),var(--mint));transform:scaleX(0);transform-origin:0;z-index:70}
+.hero{position:relative}.blob{position:absolute;border-radius:50%;filter:blur(80px);opacity:.3;z-index:-1;will-change:transform}
+.mock{animation:pop .9s cubic-bezier(.2,1,.3,1) both,fl 6s 1s ease-in-out infinite}@keyframes fl{50%{transform:translateY(-14px) rotate(.3deg)}}
+.wd{display:inline-block;overflow:hidden;vertical-align:top;padding-bottom:.1em}.wd i{display:inline-block;font-style:normal;transform:translateY(115%) rotate(7deg);animation:up .9s cubic-bezier(.2,1,.3,1) forwards;animation-delay:calc(var(--i)*.09s + .15s)}@keyframes up{to{transform:none}}
+.r{opacity:0;transform:translateY(50px);transition:opacity .9s cubic-bezier(.2,1,.3,1) var(--d,0s),transform .9s cubic-bezier(.2,1,.3,1) var(--d,0s)}.r.rl{transform:translateX(-70px)}.r.rz{transform:scale(.88)}.r.in{opacity:1;transform:none}
+.mq{overflow:hidden;border-block:1px solid var(--line);padding:18px 0;margin:10px -20px}.mq div{display:flex;gap:44px;width:max-content;animation:mq 30s linear infinite;font:800 30px 'Bricolage Grotesque';color:var(--mute);white-space:nowrap}.mq span:nth-child(even){color:var(--blue)}@keyframes mq{to{transform:translateX(-50%)}}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:20px;padding:44px 0}.stat{text-align:center}.stat .num{font:800 clamp(40px,6vw,66px) 'Bricolage Grotesque';letter-spacing:-.04em;display:block;line-height:1}.stat small{color:var(--mute)}
+.sc{display:grid;grid-template-columns:1fr 1fr;gap:56px;padding:10px 0}.stk{position:sticky;top:96px;height:fit-content;align-self:start}
+.ph{background:var(--card);border:1px solid var(--line);border-radius:32px;box-shadow:var(--shadow);padding:22px;height:440px;position:relative;overflow:hidden}.ph .big{font:800 40px 'Bricolage Grotesque'}
+.pn{position:absolute;inset:22px;opacity:0;transform:translateY(34px) scale(.95);transition:.7s cubic-bezier(.2,1,.3,1);pointer-events:none}.pn.on{opacity:1;transform:none}
+.fb{min-height:64vh;display:flex;flex-direction:column;justify-content:center;opacity:.2;transform:translateX(30px);transition:opacity .6s,transform .7s cubic-bezier(.2,1,.3,1)}.fb.on{opacity:1;transform:none}.fb h3{font-size:clamp(28px,3.6vw,44px)}.fb p{color:var(--mute);font-size:18px;margin-top:12px;max-width:26em}
+.dots{position:absolute;right:14px;bottom:14px;display:flex;gap:6px}.dots i{width:7px;height:7px;border-radius:50%;background:var(--line);transition:.4s}.dots i.on{background:var(--blue);width:22px;border-radius:4px}
+@media(max-width:860px){.sc{grid-template-columns:1fr;gap:10px}.stk{top:72px;z-index:5}.ph{height:320px}.fb{min-height:46vh}}
+.eq2{stroke-dasharray:600;stroke-dashoffset:600;transition:stroke-dashoffset 1.8s cubic-bezier(.5,0,.2,1) .2s}.on .eq2{stroke-dashoffset:0}.ar{opacity:0;transition:opacity 1s 1s}.on .ar{opacity:.16}
+.dn{stroke-dasharray:0 327;transition:stroke-dasharray 1.5s cubic-bezier(.2,1,.3,1) .2s}.on .dn{stroke-dasharray:213 327}
+.hc{aspect-ratio:1;border-radius:7px;transform:scale(0);transition:transform .5s cubic-bezier(.3,1.6,.5,1) calc(var(--k)*18ms+.2s)}.on .hc{transform:scale(1)}
+.rw{display:flex;justify-content:space-between;align-items:center;padding:13px 14px;border-radius:14px;background:var(--bg);margin-top:9px;transform:translateX(50px);opacity:0;transition:.6s cubic-bezier(.2,1,.3,1) calc(var(--k)*.12s + .15s)}.on .rw{transform:none;opacity:1}
+.bar{height:10px;border-radius:5px;background:var(--blue);width:0;margin-top:8px;transition:width 1.2s cubic-bezier(.2,1,.3,1) calc(var(--k)*.15s + .2s)}.on .bar{width:var(--w)}
+.ch{padding:6px 12px;border-radius:99px;background:color-mix(in srgb,var(--blue) 16%,transparent);color:var(--blue);font-size:13px;font-weight:700}
+.tk{width:22px;height:22px;border-radius:50%;border:2px solid var(--line);transition:.4s calc(var(--k)*.18s + .7s)}.on .tk{background:var(--mint);border-color:var(--mint);box-shadow:0 0 0 5px color-mix(in srgb,var(--mint) 22%,transparent)}
+.card .art:after{content:"";position:absolute;inset:0;background:linear-gradient(110deg,transparent 40%,#fff6 50%,transparent 60%);transform:translateX(-100%);transition:transform .8s}.card:hover .art:after{transform:translateX(100%)}
+
+#bgx,#veil{position:fixed;inset:0;pointer-events:none}#bgx{z-index:-3;overflow:hidden}#veil{z-index:-2;background:radial-gradient(ellipse at 50% 40%,color-mix(in srgb,var(--bg) 22%,transparent),color-mix(in srgb,var(--bg) 58%,transparent))}
+#bgx>*{position:absolute}#sk,#stars,#cls{inset:0}.sun{width:110px;height:110px;border-radius:50%;translate:-50% -50%}
+.star{width:3px;height:3px;border-radius:50%;background:#fff;animation:tw 3s infinite alternate}@keyframes tw{to{opacity:.15}}
+.cl{height:56px;border-radius:60px;background:#fff;filter:blur(9px);animation:cd linear infinite;left:-30vw}@keyframes cd{to{translate:170vw 0}}
+.ly{left:-6%;width:112%;bottom:-14vh;height:64vh;will-change:transform}.ly svg{width:100%;height:100%;display:block}
+.fog{left:0;right:0;bottom:0;height:28vh;background:linear-gradient(transparent,color-mix(in srgb,var(--bg) 45%,transparent))}
+.cr{background:var(--card);border:1px solid var(--line);border-radius:28px;padding:44px 24px;text-align:center;box-shadow:var(--shadow)}
+.avw{position:relative;width:88px;height:88px;margin:0 auto 18px;display:grid;place-items:center}.avw b{position:absolute;font:800 22px 'Bricolage Grotesque'}
+.av{position:absolute;inset:0;border-radius:50%;background:conic-gradient(#F2F2F2,#6E6E72,#BDBDBD,#F2F2F2);animation:spin 6s linear infinite}.av:after{content:"";position:absolute;inset:5px;border-radius:50%;background:var(--card)}
+.ly{transform-origin:50% 100%}.ly canvas{width:100%;height:100%;display:block}.moon{width:96px;height:96px;border-radius:50%;translate:-50% -50%;background:radial-gradient(circle at 38% 34%,#fff,#D8D8DC 55%,#9C9CA2);box-shadow:0 0 90px 30px rgba(255,255,255,.18)}
+.fg{left:-10%;width:120%;height:24vh;background:radial-gradient(ellipse at 50% 50%,rgba(200,204,214,.2),transparent 70%);animation:fgd 45s ease-in-out infinite alternate}@keyframes fgd{to{translate:9% 0}}
+#grain{position:fixed;inset:0;z-index:-1;pointer-events:none;opacity:.09;mix-blend-mode:overlay;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='2'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>")}
+</style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+</head>
+<body>
+<div id="pg"></div><div id="bgx" aria-hidden="true"></div><div id="veil"></div><div id="grain"></div><nav><div class="wrap"><a href="#" class="logo" style="color:var(--ink)"><i></i>TheONE</a><div class="sp"></div><div class="links"><a href="#tj-sc">TradeOne</a><a href="#lo-sc">LifeOne</a><a href="#apps">Kaufen</a><a href="#stimmen">Stimmen</a><a href="#faq">FAQ</a></div>
+<button class="ib" id="th" aria-label="Design wechseln">◐</button>
+<button class="ib" id="cb" aria-label="Warenkorb"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 7h14l-1.2 11H6.2zM9 7a3 3 0 0 1 6 0"/></svg><span class="badge" id="bg">0</span></button></div></nav>
+
+<main class="wrap">
+<div class="hero">
+<i class="blob" data-s=".3" style="width:340px;height:340px;background:#9A9A9A;left:-90px;top:10px"></i><i class="blob" data-s="-.15" style="width:300px;height:300px;background:#6E6E72;right:-60px;top:240px"></i><i class="blob" data-s=".5" style="width:220px;height:220px;background:#B5B5B8;left:42%;top:-40px"></i>
+<div><h1>Deine Trades. Dein Alltag. Ein Ort.</h1>
+<p>Zwei durchdachte Web-Apps, die du einmal kaufst und für immer nutzt: ein Trading-Journal, das dich besser macht, und ein Life-Dashboard, das deinen Kopf frei hält.</p>
+<div class="row"><a class="btn" href="#tj-sc">Mehr erfahren</a><button class="btn g" onclick="openP('bd')">Bundle für 10,99 €</button></div>
+<div class="trust"><span><b>4,9/5</b> von 1.280 Käufern</span><span><b>Einmalzahlung</b>, kein Abo</span><span><b>Sofort</b> Zugang</span></div></div>
+<div class="mock" aria-hidden="true"><small>TradeOne · Juli</small><div class="big">+2.847 €</div>
+<svg viewBox="0 0 400 140"><defs><linearGradient id="g1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2BC48A" stop-opacity=".35"/><stop offset="1" stop-color="#2BC48A" stop-opacity="0"/></linearGradient></defs><path class="eqf" d="M0 120 L40 108 L80 114 L120 88 L160 94 L200 66 L240 74 L280 44 L320 52 L360 24 L400 14 V140 H0Z" fill="url(#g1)"/><path class="eq" d="M0 120 L40 108 L80 114 L120 88 L160 94 L200 66 L240 74 L280 44 L320 52 L360 24 L400 14" fill="none" stroke="#2BC48A" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+<div class="tr"><span>EUR/USD Long</span><span class="w">+312 €</span></div><div class="tr"><span>NAS100 Short</span><span class="l">−94 €</span></div><div class="tr"><span>BTC Long · Setup A</span><span class="w">+520 €</span></div></div>
+</div>
+
+<div class="mq" aria-hidden="true"><div id="mq"></div></div>
+<div class="stats"><div class="stat"><span class="num" data-n="89">0</span><small>Zufriedene Käufer</small></div><div class="stat"><span class="num" data-n="4085">0</span><small>Trades journalt</small></div><div class="stat"><span class="num" data-n="4.7" data-d="1">0</span><small>Ø Bewertung</small></div><div class="stat"><span class="num" data-n="14">0</span><small>Tage Geld-zurück</small></div></div>
+<div id="scs"></div>
+<section id="apps"><h2>Die Apps</h2><p class="sub">Läuft im Browser, auf Handy und Desktop. Deine Daten bleiben bei dir.</p><div class="grid" id="grid"></div></section>
+
+<section><h2>Technik &amp; Details</h2><p class="sub">Was unter der Haube steckt.</p><div class="steps">
+<div class="st"><b>Läuft überall</b><p>iPhone, Android, Mac, Windows. Ein Link, kein Download.</p></div>
+<div class="st"><b>Offline nutzbar</b><p>Trades erfassen im Zug oder im Gym, Sync passiert später.</p></div>
+<div class="st"><b>Deine Daten, lokal</b><p>Alles bleibt auf deinem Gerät. Kein Konto-Zwang, kein Tracking.</p></div>
+<div class="st"><b>Export jederzeit</b><p>CSV und JSON für Excel, Notion oder dein Backup.</p></div>
+<div class="st"><b>Dark und Light</b><p>Passt sich deinem System an und lässt sich umschalten.</p></div>
+<div class="st"><b>Lebenslange Updates</b><p>Neue Features kommen automatisch, ohne Aufpreis.</p></div></div></section>
+<section id="so"><h2>So läuft's</h2><p class="sub">Kaufen, öffnen, loslegen. Mehr nicht.</p><div class="steps">
+<div class="st"><b>1. Kaufen</b><p>Bezahle sicher per Karte, PayPal oder Apple Pay.</p></div>
+<div class="st"><b>2. Link öffnen</b><p>Dein Zugang kommt sofort per E-Mail. Keine Installation.</p></div>
+<div class="st"><b>3. Starten</b><p>Als App zum Homescreen hinzufügen und fertig.</p></div>
+<div class="st"><b>4. Updates</b><p>Alle künftigen Updates sind kostenlos enthalten.</p></div></div></section>
+
+<section id="stimmen"><h2>Das sagen Nutzer</h2><p class="sub">&nbsp;</p><div class="rev">
+<div class="rv"><div class="s">★★★★★</div><p>Seit ich jeden Trade mit Screenshot und Emotion tagge, sehe ich endlich meine Fehler. Mein Winrate-Plus ist kein Zufall.</p><small>Jonas K. · Daytrader</small></div>
+<div class="rv"><div class="s">★★★★★</div><p>Geburtstage, Einkauf und Gym-Plan an einem Ort. Ich habe vier Apps gelöscht.</p><small>Lena M. · Studentin</small></div>
+<div class="rv"><div class="s">★★★★★</div><p>Sieht aus wie ein Produkt von einem Großen und fühlt sich auch so an. Fairer Preis.</p><small>Marc D. · Swing-Trader</small></div></div></section>
+
+<section id="faq"><h2>Fragen</h2><p class="sub">&nbsp;</p>
+<details><summary>Muss ich etwas installieren?</summary><p>Nein. Beide Apps laufen im Browser und lassen sich als PWA auf den Homescreen legen.</p></details>
+<details><summary>Gibt es ein Abo?</summary><p>Nein. Du zahlst einmal und nutzt die App dauerhaft, inklusive Updates.</p></details>
+<details><summary>Wo liegen meine Daten?</summary><p>Lokal auf deinem Gerät. Export als CSV oder JSON ist jederzeit möglich.</p></details>
+<details><summary>Kann ich zurückgeben?</summary><p>Ja, 14 Tage Geld-zurück-Garantie, ohne Begründung.</p></details></section>
+<section id="creator"><div class="cr"><div class="avw"><div class="av"></div><b>dmb</b></div><h2>Gebaut von dmbTrades</h2><p class="sub" style="margin:0 auto">TheONE ist das Projekt von dmbTrades. Die Apps sind für Trader und für alle gebaut, die ihren Alltag an einem Ort ordnen wollen.</p></div></section>
+</main>
+<footer><div class="wrap"><span>© 2026 TheONE · Creator: dmbTrades · Alle Preise inkl. MwSt.</span><span>Impressum · Datenschutz · AGB · Widerruf</span></div></footer>
+
+<div class="ov" id="ov"></div>
+<aside class="dr" id="dr" aria-label="Warenkorb"><div class="hd"><h3>Warenkorb</h3><button class="ib" onclick="closeAll()" aria-label="Schließen">✕</button></div><div class="items" id="items"></div><div id="foot"></div></aside>
+<div class="md" id="md" role="dialog" aria-modal="true"></div>
+<div class="toast" id="ts"></div>
+
+<script>
+const S=(c,b)=>`<svg viewBox="0 0 200 120" fill="none">${b}</svg>`;
+const ART={
+tj:S(0,'<rect x="10" y="10" width="180" height="100" rx="14" fill="#fff"/><path d="M24 84 L54 72 L80 78 L108 52 L136 58 L164 30" stroke="#2BC48A" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/><rect x="24" y="24" width="50" height="8" rx="4" fill="#CFCFCF"/><circle cx="164" cy="30" r="7" fill="#2BC48A"/>'),
+lo:S(0,'<rect x="10" y="10" width="86" height="100" rx="14" fill="#fff"/><rect x="104" y="10" width="86" height="46" rx="14" fill="#fff"/><rect x="104" y="64" width="86" height="46" rx="14" fill="#fff"/><g fill="#CFCFCF"><rect x="22" y="26" width="50" height="8" rx="4"/><rect x="22" y="46" width="62" height="8" rx="4"/><rect x="22" y="66" width="40" height="8" rx="4"/></g><circle cx="30" cy="92" r="6" fill="#BDBDBD"/><circle cx="124" cy="33" r="9" fill="#8F8F8F"/><rect x="118" y="84" width="60" height="8" rx="4" fill="#2BC48A"/>'),
+bd:S(0,'<rect x="22" y="22" width="110" height="80" rx="14" fill="#fff" opacity=".6"/><rect x="60" y="14" width="118" height="86" rx="14" fill="#fff"/><path d="M74 78 L96 66 L116 72 L136 48 L164 36" stroke="#2BC48A" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="82" cy="34" r="8" fill="#BDBDBD"/>'),
+gy:S(0,'<rect x="10" y="10" width="180" height="100" rx="14" fill="#fff"/><g fill="#222"><rect x="38" y="50" width="12" height="30" rx="4"/><rect x="150" y="50" width="12" height="30" rx="4"/><rect x="50" y="62" width="100" height="6"/></g><rect x="26" y="56" width="10" height="18" rx="3" fill="#BDBDBD"/><rect x="164" y="56" width="10" height="18" rx="3" fill="#BDBDBD"/>')};
+const P=[
+{id:'tj',n:'TradeOne',t:'Trading-Journal',p:7.99,o:12.99,bg:'#2A2A2C',d:'Journale jeden Trade mit Setup, Emotion und Screenshot. Erkenne, was wirklich funktioniert.',f:['Equity-Kurve, Winrate, Profit-Faktor, Drawdown','Tags für Setups, Fehler und Emotionen','Screenshots und Notizen pro Trade','Wochen- und Monatsreview','Export als CSV']},
+{id:'lo',n:'LifeOne',t:'Life-Dashboard',p:4.99,o:8.99,bg:'#333335',d:'Termine, Geburtstage, Einkaufszettel, Gym-Plan und Aufgaben in einer einzigen App.',f:['Kalender mit Erinnerungen','Geburtstage mit Countdown','Geteilte Einkaufsliste','Gym-Plan mit Satz-Tracking','Gewohnheiten und To-dos']},
+{id:'bd',n:'Das Bundle',t:'Beide Apps im Bundle',p:10.99,o:17.99,bg:'#262628',d:'TradeOne und LifeOne zusammen. Der beste Preis für Trading und Alltag.',f:['TradeOne komplett','LifeOne komplett','Lebenslange Updates','Priorisierter Support']},
+{id:'gy',n:'Gym Templates',t:'Add-on für LifeOne',p:2.99,o:5.99,bg:'#303032',d:'12 fertige Trainingspläne für Push/Pull/Legs, Ganzkörper und Upper/Lower.',f:['12 Pläne als Import-Datei','Progressions-Regeln','Für Anfänger bis Fortgeschrittene']}];
+const $=s=>document.querySelector(s),pf=n=>n.toFixed(2).replace('.',',')+' €',eur=n=>n.toLocaleString('de-DE',{minimumFractionDigits:2})+' €';
+let cart=[],code=false;
+try{const t=localStorage.getItem('kt');if(t)document.documentElement.dataset.theme=t}catch(e){}
+$('#th').onclick=()=>{const d=document.documentElement,n=(d.dataset.theme||'dark')=='dark'?'light':'dark';d.dataset.theme=n;try{localStorage.setItem('kt',n)}catch(e){}};
+$('#grid').innerHTML=P.map(p=>`<div class="card"><button class="art" style="background:${p.bg}" onclick="openP('${p.id}')" aria-label="${p.n} ansehen">${ART[p.id]}<span class="tag">${p.t}</span></button><div class="cb"><h3>${p.n}</h3><p>${p.d}</p><div class="pr"><div><s>${pf(p.o)}</s><b>${pf(p.p)}</b></div><button class="add" data-id="${p.id}">In den Korb</button></div></div></div>`).join('');
+function toast(m){const t=$('#ts');t.textContent=m;t.classList.add('on');clearTimeout(t._);t._=setTimeout(()=>t.classList.remove('on'),2200)}
+function add(id,btn){if(cart.includes(id)){toast('Schon im Warenkorb');return}
+ if(id==='bd')cart=cart.filter(x=>x!=='tj'&&x!=='lo');if((id==='tj'||id==='lo')&&cart.includes('bd')){toast('Im Bundle enthalten');return}
+ cart.push(id);render();toast(P.find(p=>p.id===id).n+' hinzugefügt');
+ if(btn){btn.textContent='Hinzugefügt ✓';btn.classList.add('ok');setTimeout(()=>{btn.textContent='In den Korb';btn.classList.remove('ok')},1500)}}
+document.addEventListener('click',e=>{const b=e.target.closest('.add');if(b)add(b.dataset.id,b)});
+function rm(id){cart=cart.filter(x=>x!==id);render()}
+function total(){const s=cart.reduce((a,id)=>a+P.find(p=>p.id===id).p,0);const d=code?s*.1:0;return{s,d,t:s-d}}
+function render(){const b=$('#bg');b.textContent=cart.length;b.classList.toggle('on',cart.length>0);
+ $('#items').innerHTML=cart.length?cart.map(id=>{const p=P.find(x=>x.id===id);return`<div class="it"><div class="th" style="background:${p.bg}">${ART[id]}</div><div><b>${p.n}</b><br><small>${p.t}</small></div><b>${pf(p.p)}</b><button class="ib" onclick="rm('${id}')" aria-label="Entfernen">✕</button></div>`}).join(''):'<div class="empty"><b>Dein Warenkorb ist leer</b><br>Wähle eine App und leg sie hier ab.</div>';
+ const c=total();$('#foot').innerHTML=cart.length?`<div class="cp"><input id="cin" placeholder="Gutschein (Tipp: START10)" value="${code?'START10':''}"><button class="btn g" onclick="coupon()">Einlösen</button></div><div class="sum" style="margin-top:14px"><div><span>Zwischensumme</span><span>${eur(c.s)}</span></div>${code?`<div style="color:var(--mint)"><span>Gutschein −10 %</span><span>−${eur(c.d)}</span></div>`:''}<div class="t"><span>Gesamt</span><span>${eur(c.t)}</span></div><button class="btn" onclick="checkout()">Zur Kasse</button></div>`:''}
+function coupon(){if($('#cin').value.trim().toUpperCase()==='START10'){code=true;toast('Gutschein angewendet');render()}else toast('Gutschein ungültig')}
+function ov(on){$('#ov').classList.toggle('on',on)}
+function closeAll(){['#dr','#md'].forEach(s=>$(s).classList.remove('on'));ov(false)}
+$('#ov').onclick=closeAll;document.addEventListener('keydown',e=>e.key==='Escape'&&closeAll());
+$('#cb').onclick=()=>{$('#md').classList.remove('on');$('#dr').classList.add('on');ov(true)};
+function openP(id){const p=P.find(x=>x.id===id);$('#dr').classList.remove('on');
+ $('#md').innerHTML=`<div style="background:${p.bg};border-radius:18px;display:grid;place-items:center;padding:18px;margin-bottom:16px"><div style="width:70%">${ART[id]}</div></div><h3>${p.n}</h3><p style="color:var(--mute)">${p.d}</p><ul class="ft">${p.f.map(x=>`<li>${x}</li>`).join('')}</ul><div class="pr"><div><s>${pf(p.o)}</s><b>${pf(p.p)}</b></div><div class="row"><button class="btn g" onclick="closeAll()">Schließen</button><button class="btn" onclick="add('${id}');openCart()">In den Korb</button></div></div>`;
+ $('#md').classList.add('on');ov(true)}
+function openCart(){closeAll();setTimeout(()=>$('#cb').click(),250)}
+function checkout(){const c=total();$('#dr').classList.remove('on');
+ $('#md').innerHTML=`<h3>Kasse</h3><p style="color:var(--mute)">${cart.length} Produkt${cart.length>1?'e':''} · ${eur(c.t)} inkl. MwSt.</p><div class="f"><input id="em" type="email" placeholder="E-Mail für deinen Zugang"><input placeholder="Vor- und Nachname"></div><div class="pm"><label><input type="radio" name="pm" checked>Karte</label><label><input type="radio" name="pm">PayPal</label><label><input type="radio" name="pm">Apple Pay</label></div><button class="btn" id="pay" style="width:100%;margin-top:18px" onclick="pay()">Jetzt kaufen · ${eur(c.t)}</button><p style="color:var(--mute);font-size:13px;margin-top:12px;text-align:center">Demo-Shop: Es wird nichts abgebucht. 14 Tage Geld-zurück.</p>`;
+ $('#md').classList.add('on');ov(true)}
+function pay(){const e=$('#em').value;if(!/^\S+@\S+\.\S+$/.test(e)){toast('Bitte gültige E-Mail eingeben');return}
+ $('#pay').innerHTML='<span class="sp2"></span> Zahlung läuft';
+ setTimeout(()=>{const n='TON-'+Math.floor(10000+Math.random()*89999);
+ $('#md').innerHTML=`<svg class="ck" viewBox="0 0 84 84" fill="none" stroke="#2BC48A" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"><circle cx="42" cy="42" r="38"/><path d="M26 43 L38 55 L59 31"/></svg><h3 style="text-align:center">Danke für deinen Kauf</h3><p style="text-align:center;color:var(--mute);margin:10px 0 20px">Bestellung ${n}. Dein Zugang ist unterwegs an ${e.replace(/</g,'')}.</p><button class="btn" style="width:100%" onclick="closeAll()">Weiter stöbern</button>`;cart=[];code=false;render()},1600)}
+
+const pg=$('#pg'),bl=[...document.querySelectorAll('.blob')];
+addEventListener('scroll',()=>{const y=scrollY,m=document.body.scrollHeight-innerHeight;pg.style.transform=`scaleX(${Math.min(1,y/m)})`;bl.forEach(b=>b.style.transform=`translateY(${y*b.dataset.s}px)`)},{passive:true});
+const h1=$('.hero h1');h1.innerHTML=h1.textContent.split(' ').map((w,i)=>`<span class="wd"><i style="--i:${i}">${w}</i></span>`).join(' ');
+const mw=['Equity-Kurve','Geburtstage','Winrate','Einkaufszettel','Setups','Gym-Plan','Reviews','Termine'].map(x=>`<span>${x}</span><span>✦</span>`).join('');$('#mq').innerHTML=mw+mw;
+const heat=Array.from({length:35},(_,k)=>{const v=Math.sin(k*2.3)*Math.cos(k);return`<div class="hc" style="--k:${k};background:${v>.1?'#2BC48A':v<-.4?'#E5484D':'var(--line)'}"></div>`}).join('');
+const rw=(a,b,k,c='')=>`<div class="rw" style="--k:${k}"><span>${a}</span><span ${c}>${b}</span></div>`,tk=(a,k)=>`<div class="rw" style="--k:${k}"><span>${a}</span><span class="tk"></span></div>`,br=(a,b,w,k,c='')=>`<div style="margin-top:16px"><b>${a}</b> <small style="color:var(--mute)">${b}</small><div class="bar" style="--w:${w}%;--k:${k};${c}"></div></div>`,W='class="w"',L='class="l"',EQ='M0 190 L50 170 L90 180 L140 130 L190 140 L240 90 L290 100 L340 50 L400 30';
+const SC=[{id:'tj',name:'TradeOne',lead:'Das Journal, das aus deinen Trades Erkenntnisse macht.',f:[
+['Equity-Kurve in Echtzeit','Jeder Trade fließt sofort in deine Kurve. Du siehst Drawdowns, Gewinnserien und deinen Fortschritt pro Woche, Monat oder Jahr, ganz ohne Excel.'],
+['Setups, Fehler, Emotionen','Tagge jeden Trade mit Setup, Fehler und Gefühl. Nach 50 Trades siehst du schwarz auf weiß, welches Setup Geld bringt und wann du dich selbst sabotierst.'],
+['Kennzahlen, die zählen','Winrate, Profit-Faktor, durchschnittliches R, Expectancy und maximaler Drawdown. Automatisch berechnet und verständlich erklärt.'],
+['Reviews mit System','Die Wochen-Heatmap zeigt deine besten und schlechtesten Tage. Mit Screenshots und Notizen vergisst du nie, warum du einen Trade genommen hast.']],
+p:[`<small>Equity-Kurve · 90 Tage</small><div class="big" style="color:var(--mint)">+12,4 %</div><svg viewBox="0 0 400 220" style="width:100%"><path class="ar" d="${EQ} V220H0Z" fill="#2BC48A"/><path class="eq2" d="${EQ}" fill="none" stroke="#2BC48A" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg>`,
+`<small>Letzte Trades</small>${rw('EUR/USD · Breakout','+312 €',0,W)}${rw('NAS100 · FOMO','−94 €',1,L)}${rw('BTC · Retest','+520 €',2,W)}${rw('DAX · Revenge','−160 €',3,L)}<div style="margin-top:16px;display:flex;gap:8px;flex-wrap:wrap"><span class="ch">Setup A</span><span class="ch">Ruhig</span><span class="ch">Zu früh raus</span></div>`,
+`<div style="display:flex;align-items:center;gap:20px"><svg viewBox="0 0 120 120" width="150"><circle cx="60" cy="60" r="52" fill="none" stroke="var(--line)" stroke-width="12"/><circle class="dn" cx="60" cy="60" r="52" fill="none" style="stroke:var(--blue)" stroke-width="12" stroke-linecap="round" transform="rotate(-90 60 60)"/><text x="60" y="68" text-anchor="middle" font-size="24" font-weight="800" fill="currentColor">65%</text></svg><div><small>Winrate</small><br><b>Profit-Faktor 2,1</b><br><small>Ø R: 1,8</small></div></div>${br('Expectancy','+0,7 R',72,0)}${br('Max. Drawdown','−6,2 %',30,1,'background:var(--red)')}`,
+`<small>Wochenreview · Heatmap</small><div style="display:grid;grid-template-columns:repeat(7,1fr);gap:8px;margin-top:14px">${heat}</div><p style="margin-top:16px;font-size:14px;color:var(--mute)">Bester Tag: Dienstag. Schwächster: Freitag nach 15 Uhr.</p>`]},
+{id:'lo',name:'LifeOne',lead:'Dein ganzes Leben in einer App. Ohne Chaos.',f:[
+['Kalender und Termine','Alle Termine, Fristen und Erinnerungen auf einen Blick. Die Tagesansicht zeigt dir nur, was heute zählt.'],
+['Geburtstage nie mehr vergessen','Countdown, Geschenkideen und Erinnerung eine Woche vorher. Deine Leute merken, dass du dran gedacht hast.'],
+['Einkaufszettel zum Teilen','Hake ab, was im Korb liegt, und teile die Liste mit Partner oder WG. Sortiert nach Kategorien, damit du im Laden nicht rumirrst.'],
+['Gym-Plan mit Satz-Tracking','Trage Gewicht und Wiederholungen pro Satz ein. Die App zeigt dir, wann du dein Gewicht erhöhen solltest.']],
+p:[`<small>Heute</small>${rw('09:00 · Zahnarzt','in 2 Std',0)}${rw('13:30 · Call mit Tim','Zoom',1)}${rw('18:00 · Gym Push','1 Std',2)}${rw('20:00 · Mama anrufen','Geburtstag',3)}`,
+`<small>Nächste Geburtstage</small>${br('Mama','in 3 Tagen',92,0,'background:#BDBDBD')}${br('Tim','in 12 Tagen',66,1,'background:#8F8F8F')}${br('Lena','in 25 Tagen',35,2,'background:#2BC48A')}`,
+`<small>Einkauf · REWE</small>${tk('Haferflocken',0)}${tk('Eier',1)}${tk('Hähnchen',2)}${tk('Bananen',3)}${tk('Whey',4)}`,
+`<small>Push Day · Woche 4</small>${br('Bankdrücken','4×8 · 82,5 kg',85,0)}${br('Schulterdrücken','3×10 · 40 kg',62,1)}${br('Dips','3×12 · +10 kg',48,2)}`]}];
+$('#scs').innerHTML=SC.map(s=>`<section class="scw" id="${s.id}-sc"><h2>${s.name}</h2><p class="sub">${s.lead}</p><div class="sc"><div class="stk"><div class="ph">${s.p.map((p,i)=>`<div class="pn${i?'':' on'}" data-i="${i}">${p}</div>`).join('')}<div class="dots">${s.p.map((_,i)=>`<i class="${i?'':'on'}" data-i="${i}"></i>`).join('')}</div></div></div><div>${s.f.map((x,i)=>`<div class="fb${i?'':' on'}" data-i="${i}"><h3>${x[0]}</h3><p>${x[1]}</p></div>`).join('')}</div></div></section>`).join('');
+const fo=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){const sc=e.target.closest('.sc'),i=+e.target.dataset.i;sc.querySelectorAll('.fb,.pn,.dots i').forEach(n=>n.classList.toggle('on',+n.dataset.i===i))}}),{rootMargin:'-45% 0px -45% 0px'});
+document.querySelectorAll('.fb').forEach(b=>fo.observe(b));
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){const el=e.target;el.classList.add('in');io.unobserve(el);setTimeout(()=>el.classList.remove('r','rl','rz','in'),1600)}}),{threshold:.12});
+document.querySelectorAll('section h2,section .sub,.card,.st,.rv,details,.stat').forEach((el,i)=>{el.classList.add('r');if(el.matches('.st,.rv'))el.classList.add(i%2?'rz':'rl');el.style.setProperty('--d',(i%4)*.1+'s');io.observe(el)});
+const co=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;co.unobserve(e.target);const el=e.target,n=+el.dataset.n,d=+(el.dataset.d||0),t0=performance.now();(function f(t){const k=Math.min(1,(t-t0)/1800),v=n*(1-Math.pow(1-k,4));el.textContent=v.toLocaleString('de-DE',{minimumFractionDigits:d,maximumFractionDigits:d});if(k<1)requestAnimationFrame(f)})(t0)}),{threshold:.6});
+document.querySelectorAll('.num').forEach(n=>co.observe(n));
+document.querySelectorAll('.card').forEach(c=>{c.onmousemove=e=>{const r=c.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;c.style.transform=`perspective(800px) rotateY(${x*9}deg) rotateX(${-y*9}deg) translateY(-6px)`};c.onmouseleave=()=>c.style.transform=''});
+
+
+
+(function(){if(!window.THREE)return;const T=THREE,bx=$('#bgx');
+const hs=(x,y)=>{const s=Math.sin(x*127.1+y*311.7)*43758.5453;return s-Math.floor(s)},
+vn=(x,y)=>{const i=Math.floor(x),j=Math.floor(y),fx=x-i,fy=y-j,u=fx*fx*(3-2*fx),v=fy*fy*(3-2*fy);return hs(i,j)*(1-u)*(1-v)+hs(i+1,j)*u*(1-v)+hs(i,j+1)*(1-u)*v+hs(i+1,j+1)*u*v},
+CX=z=>Math.sin(z*.011)*16,
+H=(x,z)=>{const xx=x-CX(z);let a=0,m=1,f=.011;for(let o=0;o<5;o++){a+=(1-Math.abs(2*vn(x*f+o*7.3,z*f+o*3.1)-1))*m;m*=.5;f*=2.1}return a*36*(.05+Math.pow(Math.min(1,Math.abs(xx)/85),1.5))};
+const R=new T.WebGLRenderer({antialias:true});R.setPixelRatio(Math.min(devicePixelRatio,1.5));R.setSize(innerWidth,innerHeight);R.domElement.style.cssText='inset:0;width:100%;height:100%';bx.append(R.domElement);
+const scene=new T.Scene(),cam=new T.PerspectiveCamera(62,innerWidth/innerHeight,.5,1600);scene.fog=new T.Fog(0x888888,30,420);
+const skM=new T.ShaderMaterial({side:T.BackSide,depthWrite:false,fog:false,uniforms:{t:{value:new T.Color()},b:{value:new T.Color()}},vertexShader:'varying vec3 v;void main(){v=position;gl_Position=projectionMatrix*modelViewMatrix*vec4(position,1.);}',fragmentShader:'varying vec3 v;uniform vec3 t,b;void main(){float h=clamp(normalize(v).y,0.,1.);gl_FragColor=vec4(mix(b,t,pow(h,.55)),1.);}'});
+const sky=new T.Mesh(new T.SphereGeometry(1100,24,16),skM);sky.renderOrder=-2;scene.add(sky);
+const g=new T.PlaneGeometry(420,800,170,320);g.rotateX(-Math.PI/2);g.translate(0,0,-340);const ps=g.attributes.position,cl=new Float32Array(ps.count*3);
+for(let i=0;i<ps.count;i++){const x=ps.getX(i),z=ps.getZ(i),h=H(x,z);ps.setY(i,h);const n=vn(x*.25,z*.25)*.1,s=Math.min(1,Math.max(0,(h-27)/9)),k=Math.min(1,Math.max(0,(h-5)/12));let r=.09+.21*k+n,gg=.15+.13*k+n,b=.09+.18*k+n;r+=(.93-r)*s;gg+=(.95-gg)*s;b+=(.98-b)*s;cl.set([r,gg,b],i*3)}
+g.setAttribute('color',new T.BufferAttribute(cl,3));g.computeVertexNormals();scene.add(new T.Mesh(g,new T.MeshLambertMaterial({vertexColors:true})));
+const N=1800,tr=new T.InstancedMesh(new T.ConeGeometry(1.3,5.5,6),new T.MeshLambertMaterial({color:0x1d2c24}),N),o=new T.Object3D();let n=0;
+for(let a=0;n<N&&a<20000;a++){const x=(Math.random()-.5)*300,z=40-Math.random()*620,h=H(x,z);if(h>19||Math.abs(x-CX(z))<5)continue;const s=.8+Math.random()*1.3;o.position.set(x,h+2.5*s,z);o.scale.set(s,s*(.9+Math.random()*.5),s);o.updateMatrix();tr.setMatrixAt(n++,o.matrix)}
+tr.count=n;scene.add(tr);
+const sp=new Float32Array(2400);for(let i=0;i<800;i++){const a=Math.random()*6.28,e=Math.random()*1.3+.1;sp.set([Math.cos(a)*Math.cos(e)*1000,Math.sin(e)*1000,Math.sin(a)*Math.cos(e)*1000],i*3)}
+const sg=new T.BufferGeometry();sg.setAttribute('position',new T.BufferAttribute(sp,3));const stars=new T.Points(sg,new T.PointsMaterial({size:2,sizeAttenuation:false,transparent:true,opacity:0,fog:false,depthWrite:false}));scene.add(stars);
+const mk=(r,c,op,add)=>{const m=new T.Mesh(new T.CircleGeometry(r,48),new T.MeshBasicMaterial({color:c,fog:false,transparent:true,opacity:op,blending:add?T.AdditiveBlending:T.NormalBlending}));scene.add(m);return m};
+const sun=mk(38,0xffc58a,1),sh=mk(140,0xffa060,.25,1),moon=mk(26,0xe8ecff,0),mh=mk(95,0x9fb0ff,0,1);
+const dl=new T.DirectionalLight(0xffffff,1.2),hm=new T.HemisphereLight(0xffffff,0x1a1a1c,.8);scene.add(dl,hm);
+const C=a=>a.map(x=>new T.Color(x)),PL=[C(['#355089','#ff9a62','#ffb784','#6a5a7a','#ff9a62']),C(['#3a6db3','#b9cde0','#fff4e0','#8fa3bd','#7fb0ff']),C(['#3d2a6e','#ff5a3c','#ff7a50','#6b3f6e','#ff6a4a']),C(['#04050c','#1a2745','#8fa6ff','#2a3560','#8fa6ff'])],tmp=PL[0].map(c=>c.clone());
+const pal=p=>{const s=p*3,i=Math.min(2,Math.floor(s)),t=s-i;return tmp.map((c,k)=>c.copy(PL[i][k]).lerp(PL[i+1][k],t))},cp01=v=>Math.max(0,Math.min(1,v));
+let tp=0,cp=0,mx=0,my=0,ac='';const upd=()=>{const m=document.body.scrollHeight-innerHeight;tp=m>0?Math.min(1,scrollY/m):0};
+addEventListener('scroll',upd,{passive:true});addEventListener('mousemove',e=>{mx=e.clientX/innerWidth-.5;my=e.clientY/innerHeight-.5});
+addEventListener('resize',()=>{R.setSize(innerWidth,innerHeight);cam.aspect=innerWidth/innerHeight;cam.updateProjectionMatrix()});
+function fr(ts){requestAnimationFrame(fr);cp+=(tp-cp)*.06;const p=cp,c=pal(p),z=40-p*500,cx=CX(z)+mx*14;
+cam.position.set(cx,H(cx,z)+8+Math.sin(ts*.0007)*.4,z);const z2=z-70;cam.lookAt(CX(z2)+mx*40,H(CX(z2),z2)+13-my*8,z2);cam.rotateZ(-(CX(z2)-CX(z))*.012+mx*.03);
+skM.uniforms.t.value.copy(c[0]);skM.uniforms.b.value.copy(c[1]);scene.fog.color.copy(c[1]);sky.position.copy(cam.position);stars.position.copy(cam.position);
+const up=cp01(p/.8),sy=Math.sin(up*Math.PI)*260+16,cpos=cam.position;
+sun.visible=sh.visible=p<.85;sun.position.set(cpos.x-120+up*240,cpos.y+sy,cpos.z-850);sh.position.copy(sun.position);sun.lookAt(cpos);sh.lookAt(cpos);sun.material.color.copy(c[4]);sh.material.color.copy(c[4]);
+const mv=cp01((p-.78)/.2);moon.visible=mh.visible=mv>0;moon.position.set(cpos.x+70,cpos.y+20+mv*240,cpos.z-850);mh.position.copy(moon.position);moon.lookAt(cpos);mh.lookAt(cpos);moon.material.opacity=mv;mh.material.opacity=mv*.28;
+stars.material.opacity=cp01((p-.72)*3.5);const nt=cp01((p-.6)/.4);dl.color.copy(c[2]);dl.intensity=1.4-.9*nt;dl.position.set(cpos.x-120,70+sy*.2,cpos.z+60);hm.color.copy(c[3]);hm.intensity=.95-.45*nt;
+const root=document.documentElement;if(root.dataset.theme==='light'){if(ac){root.style.removeProperty('--blue');ac=''}}else{const h='#'+c[4].getHexString();if(h!==ac){root.style.setProperty('--blue',h);ac=h}}
+R.render(scene,cam)}
+upd();cp=tp;fr(0)})();
+render();
+</script>
+</body>
+</html>
